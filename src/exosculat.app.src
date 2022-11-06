@@ -1,0 +1,9 @@
+{application, exosculat,
+ [
+  {description, "EXO Exosculat Application"},
+  {vsn, "0.11.0"},
+  {registered, []},
+  {applications, [rocksdb,mnesia,ranch,cowboy,nitro,kvs,syn,n2o,bpe,form]},
+  {mod, { exosculat, []}},
+  {env, []}
+ ]}.
