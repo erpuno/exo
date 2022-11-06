@@ -1,7 +1,7 @@
 EXO: Тарифікаційний менеджер
 ============================
 
-[![Hex pm](http://img.shields.io/hexpm/v/fin.svg?style=flat)](https://hex.pm/packages/exosculat)
+[![Hex pm](http://img.shields.io/hexpm/v/exosculat.svg?style=flat)](https://hex.pm/packages/exosculat)
 [![Actions Status](https://github.com/erpuno/exo/workflows/mix/badge.svg)](https://github.com/erpuno/exo/actions)
 
 EXO — це універсальний менеджер облікових записів, які містять історію тарифікованих транзакції. Облікові записи управляються BPMN процесами, активності яких визначені Erlang функціями. FIN, як приклад <a href="https://erp.uno">ERP.UNO</a> може бути використаний як прототип для побудови білінгових систем, банків та інших облікових систем.
