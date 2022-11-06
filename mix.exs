@@ -16,7 +16,7 @@ defmodule EXO.Mixfile do
     [
       files: ~w(doc include priv src mix.exs LICENSE README.md),
       licenses: ["ISC"],
-      links: %{"GitHub" => "https://github.com/erpuno/exosculat"}
+      links: %{"GitHub" => "https://github.com/erpuno/exo"}
     ]
   end
 
