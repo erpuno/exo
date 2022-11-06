@@ -86,8 +86,7 @@ $ open http://localhost:8051/app/index.html
 
 ![image](https://user-images.githubusercontent.com/144776/200149114-dcd21f61-28a4-4aa9-a020-bcb2f70b7a1f.png)
 
-Автори
--------
+Дописувачі
+----------
 
 * Максим Сохацький
-
