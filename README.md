@@ -18,9 +18,15 @@ EXO — це універсальний менеджер облікових за
 кроки бізнес-процесів у сучасній системі даних KVS на базі RocksDB.
 
 ```
+$ sudo apt install erlang elixir build-essential cmake
+```
+
+```
+$ git clone https://github.com/erpuno/exo
+$ cd exo
 $ mix deps.get
 $ iex -S mix
-$ open http://localhost:8051/app/index.html
+$ open http://localhost:8051/app/login.htm
 ```
 
 Це навчальний приклад освітнього підготовчого курсу для інтернів, який використовується для
