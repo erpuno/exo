@@ -38,9 +38,9 @@ $ open http://localhost:8051/app/index.html
 
 ### Базові модулі
 
-* [fin_kvs](src/boot/fin_kvs.erl) Схема даних, її налаштування
-* [fin_route](src/pages/fin_route.erl) Налаштування маршрутів HTML сторінок для веб-серверу
-* [fin](src/fin.erl) Головний модуль Erlang/OTP додатку
+* [exo_kvs](src/boot/exo_kvs.erl) Схема даних, її налаштування
+* [exo_route](src/pages/exo_route.erl) Налаштування маршрутів HTML сторінок для веб-серверу
+* [exosculat](src/exosculat.erl) Головний модуль Erlang/OTP додатку
 
 ### Редактори форм
 
