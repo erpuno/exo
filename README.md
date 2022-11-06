@@ -1,5 +1,5 @@
-EXO: Автоматизована система розрахунків
-=======================================
+EXO: Тарифікація та розрахунки
+==============================
 
 [![Hex pm](http://img.shields.io/hexpm/v/exosculat.svg?style=flat)](https://hex.pm/packages/exosculat)
 [![Actions Status](https://github.com/erpuno/exo/workflows/mix/badge.svg)](https://github.com/erpuno/exo/actions)
