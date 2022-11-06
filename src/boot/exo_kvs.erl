@@ -1,4 +1,4 @@
--module(fin_kvs).
+-module(exo_kvs).
 -export([metainfo/0,fin/0]).
 -include("bank/phone.hrl").
 -include("ent.hrl").
