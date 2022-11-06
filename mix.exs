@@ -4,7 +4,7 @@ defmodule EXO.Mixfile do
   def project() do
     [
       app: :exosculat,
-      version: "0.11.0",
+      version: "0.11.1",
       description: "EXO Exosculat Application",
       package: package(),
       elixir: "~> 1.11",
