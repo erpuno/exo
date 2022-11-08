@@ -16,6 +16,7 @@ route(<<>>)                        -> bpe_index;
 route(<<"app/bpe",     _/binary>>) -> bpe_index;
 route(<<"app/kvs",     _/binary>>) -> 'Elixir.KVS.Index';
 route(<<"app/n2o",     _/binary>>) -> 'Elixir.N2O.Index';
+route(<<"app/mnesia",  _/binary>>) -> 'Elixir.MNESIA.Index';
 route(<<"app/login",   _/binary>>) -> bpe_login;
 route(<<"app/form",    _/binary>>) -> bpe_forms;
 route(<<"app/process", _/binary>>) -> bpe_act;

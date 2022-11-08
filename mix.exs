@@ -22,7 +22,7 @@ defmodule EXO.Mixfile do
 
   def application(),
     do: [mod: {:exosculat, []},
-         applications: [:rocksdb,:ranch,:cowboy,:kvs,:syn,:bpe,:nitro,:form,:n2o]]
+         applications: [:rocksdb,:ranch,:mnesia,:cowboy,:kvs,:syn,:bpe,:nitro,:form,:n2o]]
 
   def deps() do
     [
