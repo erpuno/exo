@@ -46,7 +46,7 @@ event({'Discard',[]}) ->
 event({Event,Name}) ->
     nitro:wire(lists:concat(["console.log(\"",io_lib:format("~p",[{Event,Name}]),"\");"]));
 
-event(Event) ->
+event(_Event) ->
     ok.
 
 header() ->
