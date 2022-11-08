@@ -12,7 +12,7 @@ event(init) ->
     nitro:insert_bottom(stand, HTML);
 
 event({'Next',_}) ->
-    nitro:redirect("actors.htm");
+    nitro:redirect("bpe.htm");
 
 event({'Close',_}) ->
     nitro:redirect("index.html");

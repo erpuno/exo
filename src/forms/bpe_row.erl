@@ -12,7 +12,7 @@ new(Name,Proc,_) ->
     Pid = nitro:to_list(Proc#process.id),
     Docs = Proc#process.docs,
     #panel { id=form:atom([tr,Name]), class=td, body=[
-        #panel{class=column6,   body = #link{href="act.htm?p="++Pid, body=Pid } },
+        #panel{class=column6,   body = #link{href="process.htm?p="++Pid, body=Pid } },
         #panel{class=column6,   body = nitro:to_list(Proc#process.name) },
         #panel{class=column6,   body = nitro:to_list(current(Proc))},
         #panel{class=column20,  body = nitro:to_list(current(Proc))},
