@@ -43,6 +43,8 @@ $ open http://localhost:8051/app/login.htm
 * [form.htm](priv/static/form.htm) Сторінка всіх форм
 * [process.htm](priv/static/process.htm) Сторінка історії процесу
 * [kvs.htm](priv/static/kvs.htm) Сторінка всіх ланцюжків даних
+* [n2o.htm](priv/static/n2o.htm) Сторінка службових таблиць сервісів N2O
+* [mnesia.htm](priv/static/mnesia.htm) Сторінка таблиць бази даних MNESIA
 
 ### Базові модулі
 
@@ -61,10 +63,12 @@ $ open http://localhost:8051/app/login.htm
 ### Контролери сторінок
 
 * [bpe_act](src/pages/bpe_act.erl) Сторінка відображення історії процесу
-* [bpe_forms](src/pages/bpe_forms.erl) Сторінка відображення всіх форм системи FORM
 * [bpe_login](src/pages/bpe_login.erl) Сторінка аутентифікації
 * [bpe_index](src/pages/bpe_index.erl) Сторінка переліку всіх процесів BPE
-* [kvs_adm](lib/kvs_adm.ex) Сторінка даних KVS
+* [bpe_forms](src/pages/bpe_forms.erl) Сторінка відображення всіх форм системи FORM
+* [kvs_adm](lib/pages/kvs_adm.ex) Сторінка даних KVS
+* [n2o_adm](lib/pages/n2o_adm.ex) Сторінка таблиць N2O
+* [mnesia_adm](lib/pages/mnesia_adm.ex) Сторінка даних MNESIA
 
 Аутентифікація
 --------------
