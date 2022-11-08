@@ -5,7 +5,7 @@
 -include_lib("nitro/include/nitro.hrl").
 
 doc() -> "This is the actor table row representation in FORM CSS. Used to draw active processes"
-         " in <a href=\"actors.htm\">BPE process table</a> but displayed as class=form.".
+         " in <a href=\"bpe.htm\">BPE process table</a> but displayed as class=form.".
 id() -> #process{}.
 current(Proc) -> {_,T} = bpe:current_task(Proc), T.
 new(Name,Proc,_) -> 
