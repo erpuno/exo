@@ -38,13 +38,14 @@ $ open http://localhost:8051/app/login.htm
 ### Статичні HTML контейнери
 
 * [login.htm](priv/static/login.htm) Сторінка авторизації
-* [index.html](priv/static/index.html) Домашня сторінка
-* [forms.html](priv/static/forms.htm) Сторінка всіх форм
-* [actors.html](priv/static/actors.htm) Сторінка всіх процесів
-* [act.html](priv/static/act.htm) Сторінка історії процесу
+* [bpe.html](priv/static/bpe.html) Домашня сторінка
+* [form.html](priv/static/form.htm) Сторінка всіх форм
+* [bpe.html](priv/static/bpe.htm) Сторінка всіх процесів
+* [process.html](priv/static/process.htm) Сторінка історії процесу
 
 ### Базові модулі
 
+* [EXO(lib/EXO.ex) Імпорт Erlang кортежів в Elixir
 * [exo_kvs](src/boot/exo_kvs.erl) Схема даних, її налаштування
 * [exo_route](src/pages/exo_route.erl) Налаштування маршрутів HTML сторінок для веб-серверу
 * [exosculat](src/exosculat.erl) Головний модуль Erlang/OTP додатку
@@ -59,9 +60,10 @@ $ open http://localhost:8051/app/login.htm
 ### Контролери сторінок
 
 * [bpe_act](src/pages/bpe_act.erl) Сторінка відображення історії процесу
-* [bpe_forms](src/pages/bpe_forms.erl) Сторінка відображення всіх форм системи
+* [bpe_forms](src/pages/bpe_forms.erl) Сторінка відображення всіх форм системи FORM
 * [bpe_login](src/pages/bpe_login.erl) Сторінка аутентифікації
-* [bpe_index](src/pages/bpe_index.erl) Сторінка переліку всіх процесів та їх створення
+* [bpe_index](src/pages/bpe_index.erl) Сторінка переліку всіх процесів BPE
+* [kvs_adm](lib/kvs_adm.ex) Сторінка даних KVS
 
 Аутентифікація
 --------------
