@@ -34,7 +34,7 @@ defmodule EXO.Mixfile do
       {:nitro, "~> 7.8.0"},
       {:form, "~> 7.8.0"},
       {:kvs, "~> 9.4.8"},
-      {:n2o, "~> 9.4.0"}
+      {:n2o, "~> 9.11.0"}
     ]
   end
 end

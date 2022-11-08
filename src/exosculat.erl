@@ -9,4 +9,3 @@ start(_,_) -> kvs:join(),
                        [{port, application:get_env(n2o, port, 8051)}],
                        #{env => #{dispatch => n2o_cowboy:points()}}),
               supervisor:start_link({local, ?MODULE}, ?MODULE, []).
-

@@ -2,7 +2,7 @@ use Mix.Config
 
 config :n2o,
   pickler: :n2o_secret,
-  app: :fin,
+  app: :exosculat,
   mq: :n2o_syn,
   port: 8051,
   protocols: [:n2o_heart, :nitro_n2o, :n2o_ftp],
