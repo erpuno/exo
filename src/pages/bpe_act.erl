@@ -1,5 +1,4 @@
 -module(bpe_act).
--copyright('Maxim Sokhatsky').
 -include_lib("nitro/include/nitro.hrl").
 -include_lib("form/include/meta.hrl").
 -include_lib("bpe/include/bpe.hrl").
@@ -35,6 +34,6 @@ event(_) ->
 
 header() ->
   #panel{id=header,class=th,body=
-    [#panel{class=column6,body="State"},
-     #panel{class=column6,body="Documents"}]}.
+    [#panel{class=column6,body= <<"Стан"/utf8>>},
+     #panel{class=column6,body= <<"Документи"/utf8>>}]}.
 

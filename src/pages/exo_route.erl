@@ -1,5 +1,4 @@
 -module(exo_route).
--include_lib("n2o/include/n2o.hrl").
 -export([init/2, finish/2]).
 
 finish(State, Ctx) -> {ok, State, Ctx}.

@@ -1,5 +1,4 @@
 -module(bpe_forms).
--copyright('Maxim Sokhatsky').
 -export([event/1]).
 -include_lib("n2o/include/n2o.hrl").
 -include_lib("nitro/include/nitro.hrl").

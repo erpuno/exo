@@ -1,10 +1,9 @@
 -module(bpe_trace).
--copyright('Maxim Sokhatsky').
 -export([doc/0,id/0,new/3]).
 -include_lib("bpe/include/bpe.hrl").
 -include_lib("nitro/include/nitro.hrl").
 
-doc() -> "This is the actor trace row (step) representation. Used to draw trace of the processes".
+doc() -> <<"Це форма-рядок для відображення табличної репрезентації історії процесу"/utf8>>.
 id() -> #hist{task=#sequenceFlow{source="Init"}}.
 new(Name,Hist,_) ->
     Task = case Hist#hist.task of [] -> (id())#hist.task; X -> X end,

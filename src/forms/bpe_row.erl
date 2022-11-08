@@ -1,11 +1,9 @@
 -module(bpe_row).
--copyright('Maxim Sokhatsky').
 -export([doc/0,id/0,new/3]).
 -include_lib("bpe/include/bpe.hrl").
 -include_lib("nitro/include/nitro.hrl").
 
-doc() -> "This is the actor table row representation in FORM CSS. Used to draw active processes"
-         " in <a href=\"bpe.htm\">BPE process table</a> but displayed as class=form.".
+doc() -> <<"Це форма-рядок для відображення табличної репрезентації процесу."/utf8>>.
 id() -> #process{}.
 current(Proc) -> {_,T} = bpe:current_task(Proc), T.
 new(Name,Proc,_) -> 

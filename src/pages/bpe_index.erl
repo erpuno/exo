@@ -1,5 +1,4 @@
 -module(bpe_index).
--copyright('Maxim Sokhatsky').
 -export([event/1]).
 -include_lib("n2o/include/n2o.hrl").
 -include_lib("bpe/include/bpe.hrl").
@@ -13,7 +12,7 @@ event(init) ->
     nitro:clear(ctrl),
     Module = bpe_create,
     nitro:insert_bottom(frms, form:new(Module:new(Module,Module:id(), []), Module:id(), [])),
-    nitro:insert_bottom(ctrl, #link{id=creator, body="New",postback=create, class=[button,sgreen]}),
+    nitro:insert_bottom(ctrl, #link{id=creator, body= <<"Новий"/utf8>> ,postback=create, class=[button,sgreen]}),
     nitro:hide(frms),
   [ nitro:insert_top(tableRow, bpe_row:new(form:atom([row,I#process.id]),I,[]))
  || I <- kvs:all("/bpe/proc") ],
@@ -51,10 +50,10 @@ event(_Event) ->
 
 header() ->
   #panel{id=header,class=th,body=
-    [#panel{class=column6,body="No"},
-     #panel{class=column10,body="Name"},
-     #panel{class=column6,body="Module"},
-     #panel{class=column20,body="State"},
-     #panel{class=column20,body="Documents"},
-     #panel{class=column20,body="Manage"}
+    [#panel{class=column6,body= <<"Номер"/utf8>>},
+     #panel{class=column10,body= <<"Ім'я"/utf8>>},
+     #panel{class=column6,body= <<"Модуль"/utf8>>},
+     #panel{class=column20,body= <<"Стан"/utf8>>},
+     #panel{class=column20,body= <<"Документи"/utf8>>},
+     #panel{class=column20,body= <<"Управління"/utf8>>}
      ]}.
