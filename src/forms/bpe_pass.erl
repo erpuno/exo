@@ -1,7 +1,7 @@
 -module(bpe_pass).
 -copyright('Maxim Sokhatsky').
 -include_lib("form/include/meta.hrl").
--include("bank/phone.hrl").
+-include("phone.hrl").
 -export([doc/0,id/0,new/3]).
 
 doc() -> "One-time password PIN control used in banks,".

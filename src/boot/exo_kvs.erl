@@ -1,7 +1,10 @@
 -module(exo_kvs).
 -export([metainfo/0,fin/0]).
--include("bank/phone.hrl").
--include("ent.hrl").
+-include("phone.hrl").
+-include("transaction.hrl").
+-include("card.hrl").
+-include("client.hrl").
+-include("account.hrl").
 -include_lib("kvs/include/metainfo.hrl").
 -include_lib("form/include/meta.hrl").
 
