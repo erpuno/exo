@@ -37,11 +37,12 @@ $ open http://localhost:8051/app/login.htm
 
 ### Статичні HTML контейнери
 
+* [index.html](priv/static/index.html) Домашня сторінка
 * [login.htm](priv/static/login.htm) Сторінка авторизації
-* [bpe.html](priv/static/bpe.html) Домашня сторінка
-* [form.html](priv/static/form.htm) Сторінка всіх форм
-* [bpe.html](priv/static/bpe.htm) Сторінка всіх процесів
-* [process.html](priv/static/process.htm) Сторінка історії процесу
+* [bpe.htm](priv/static/bpe.htm) Сторінка всіх процесів
+* [form.htm](priv/static/form.htm) Сторінка всіх форм
+* [process.htm](priv/static/process.htm) Сторінка історії процесу
+* [kvs.htm](priv/static/kvs.htm) Сторінка всіх процесів
 
 ### Базові модулі
 
