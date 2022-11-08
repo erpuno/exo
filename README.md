@@ -42,7 +42,7 @@ $ open http://localhost:8051/app/login.htm
 * [bpe.htm](priv/static/bpe.htm) Сторінка всіх процесів
 * [form.htm](priv/static/form.htm) Сторінка всіх форм
 * [process.htm](priv/static/process.htm) Сторінка історії процесу
-* [kvs.htm](priv/static/kvs.htm) Сторінка всіх процесів
+* [kvs.htm](priv/static/kvs.htm) Сторінка всіх ланцюжків даних
 
 ### Базові модулі
 
