@@ -1,8 +1,7 @@
 defmodule EXO do
   require Record
 
-  Enum.each(
-    [ :account, :client, :card, :transaction, :act, :api, :currency, :otp, :phone, :sid ],
+  Enum.each([ :account, :client, :card, :transaction, :act, :currency, :otp, :phone ],
     fn t ->
       Enum.each(
         Record.extract_all(

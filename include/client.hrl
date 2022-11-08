@@ -1,18 +1,20 @@
 -ifndef(CLIENT_HRL).
 -define(CLIENT_HRL, "client_hrl").
 
--record(client, {id,next,prev,
+-record(client, {
+        id,
+        next,prev,
         bank,
         iban,
         local,
         type,
         status,
-        program,
+        program = [],
         amount,
         default_account,
-        accounts,
+        accounts = "/exo/:bank/:id/accounts",
         default_card,
-        cards,
+        cards = "/exo/:bank/:id/cards",
         phone,
         tax,
         names,

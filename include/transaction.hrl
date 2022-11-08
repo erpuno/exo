@@ -4,8 +4,8 @@
 -record(transaction, {
         id,next,prev,
         timestamp,
-        beneficiary,
-        subsidiary,
+        beneficiary, % bank/client
+        subsidiary,  % bank/client
         amount,
         tax,
         ballance,

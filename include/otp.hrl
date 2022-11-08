@@ -1,5 +1,5 @@
 -ifndef(OTP_HRL).
--define(OTP_HRL, "otp").
+-define(OTP_HRL, "otp_hrl").
 
 -record(otp, {
     id,
