@@ -45,7 +45,7 @@ $ open http://localhost:8051/app/login.htm
 
 ### Базові модулі
 
-* [EXO(lib/EXO.ex) Імпорт Erlang кортежів в Elixir
+* [EXO](lib/EXO.ex) Імпорт Erlang кортежів в Elixir
 * [exo_kvs](src/boot/exo_kvs.erl) Схема даних, її налаштування
 * [exo_route](src/pages/exo_route.erl) Налаштування маршрутів HTML сторінок для веб-серверу
 * [exosculat](src/exosculat.erl) Головний модуль Erlang/OTP додатку
