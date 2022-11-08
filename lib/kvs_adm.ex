@@ -1,7 +1,6 @@
 defmodule KVS.Index do
-  use N2O, with: [:n2o, :nitro]
-  use FORM
-  use KVS
+  require NITRO
+  require KVS
   require Logger
 
   def parse(_), do: []
@@ -10,27 +9,27 @@ defmodule KVS.Index do
     do:
       [:user, :writers, :session, :enode]
       |> Enum.map(fn x ->
-       [ NITRO.clear(x),
+       [ :nitro.clear(x),
          send(self(), {:direct, x})] end)
 
   def event(:user),
-  do: NITRO.update(:user,
-      span(body: parse(:n2o.user())))
+  do: :nitro.update(:user,
+      NITRO.span(body: parse(:n2o.user())))
 
   def event(:session),
-  do: NITRO.update(:session,
-      span(body: :n2o.sid()))
+  do: :nitro.update(:session,
+      NITRO.span(body: :n2o.sid()))
 
   def event(:enode),
-  do: NITRO.update(:enode,
-      span(body: NITRO.compact(:erlang.node())))
+  do: :nitro.update(:enode,
+      NITRO.span(body: :nitro.compact(:erlang.node())))
 
   def event({:link, i}),
   do: [
-      NITRO.clear(:feeds),
+      :nitro.clear(:feeds),
       :kvs.feed(i) |> Enum.map(fn t ->
-        NITRO.insert_bottom(:feeds,
-          panel(body: NITRO.compact(t))) end)
+        :nitro.insert_bottom(:feeds,
+          NITRO.panel(body: :nitro.compact(t))) end)
     ]
 
   def event(:writers),
@@ -38,15 +37,15 @@ defmodule KVS.Index do
       :writer
       |> :kvs.all()
       |> :lists.sort()
-      |> Enum.map(fn writer(id: i, count: c) ->
-        NITRO.insert_bottom(
+      |> Enum.map(fn KVS.writer(id: i, count: c) ->
+        :nitro.insert_bottom(
           :writers,
-          panel(body:
-          [link(body: i, postback: {:link, i}),
-           ' (' ++ NITRO.to_list(c) ++ ')']))
+          NITRO.panel(body:
+          [NITRO.link(body: i, postback: {:link, i}),
+           ' (' ++ :nitro.to_list(c) ++ ')']))
       end)
 
   def event(_), do: []
 
-  def ram(os), do: NITRO.compact(os)
+  def ram(os), do: :nitro.compact(os)
 end
