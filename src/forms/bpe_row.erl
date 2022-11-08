@@ -3,7 +3,7 @@
 -include_lib("bpe/include/bpe.hrl").
 -include_lib("nitro/include/nitro.hrl").
 
-doc() -> <<"Це форма-рядок для відображення табличної репрезентації процесу."/utf8>>.
+doc() -> <<"Форма-рядок для відображення табличної репрезентації процесу."/utf8>>.
 id() -> #process{}.
 current(Proc) -> {_,T} = bpe:current_task(Proc), T.
 new(Name,Proc,_) -> 

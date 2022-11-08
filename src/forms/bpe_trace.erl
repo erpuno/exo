@@ -3,7 +3,7 @@
 -include_lib("bpe/include/bpe.hrl").
 -include_lib("nitro/include/nitro.hrl").
 
-doc() -> <<"Це форма-рядок для відображення табличної репрезентації історії процесу"/utf8>>.
+doc() -> <<"Форма-рядок для відображення табличної репрезентації історії процесу"/utf8>>.
 id() -> #hist{task=#sequenceFlow{source="Init"}}.
 new(Name,Hist,_) ->
     Task = case Hist#hist.task of [] -> (id())#hist.task; X -> X end,
