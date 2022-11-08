@@ -3,7 +3,7 @@
 
 -record(account, {id,next,prev,
         origin,
-        type,
+        type, % oil | gas | internet
         iban,
         program = [],
         client,
