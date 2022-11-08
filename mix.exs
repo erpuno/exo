@@ -31,7 +31,7 @@ defmodule EXO.Mixfile do
       {:rocksdb, "~> 1.6.0"},
       {:syn, "2.1.0"},
       {:bpe, "~> 7.11.0"},
-      {:nitro, "~> 7.8.0"},
+      {:nitro, "~> 7.10.0", override: true},
       {:form, "~> 7.8.0"},
       {:kvs, "~> 9.4.8"},
       {:n2o, "~> 9.11.0"}
