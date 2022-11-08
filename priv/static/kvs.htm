@@ -10,7 +10,7 @@
     <title>KVS</title>
     <link rel="stylesheet" href="css/blank.css" />
     <link rel="stylesheet" href="css/forms.css" />
-    <link rel="stylesheet" href="css/admin.css" />
+    <link rel="stylesheet" href="css/admin.css?v=1" />
 </head>
 
 <body>
@@ -21,24 +21,29 @@
     <a href='form.htm'>FORM</a>
     <a href='kvs.htm' style="background:#ededed;">KVS</a>
 </nav>
-
 <aside>
     <section>
       <h2>KVS</h2>
-      <p>Abstract chain database</p>
-      <div> SESSION: <span id=session></span>
-                 VM: <span id=enode></span></div>
+      <div> Сесія: <span id=session></span>
+               ВМ: <span id=enode></span></div>
+    </section>
 </aside>
 <main>
+  <section>
     <div class=container>
-      <div><h2>WRITERS</h2>
+      <div><h2>КУРСОРИ</h2>
       <div id=writers></div></div>
-      <div><h2>CHAINS</h2>
-      <div id=feeds>To display the chain
-              select the writer.</div></div>
+      <div><h2>ЛАНЦЮЖКИ</h2>
+      <div id=feeds style="width=800px;">Для відображення ланцюжка виберіть курсор.</div></div>
     </div>
-    </section>
+
+  </section>
 </main>
+<aside>
+  <section>
+    <small>Зроблено з любов'ю <span class="heart">❤</span> до KVS</small>
+  </section>
+</aside>
 
     <script src='https://ws.n2o.dev/priv/utf8.js'></script>
     <script src='https://ws.n2o.dev/priv/bert.js'></script>
