@@ -25,9 +25,9 @@ defmodule EXO.Route do
   def route(<<"app/consumer/consume", _::binary>>), do: BPE.Login
   def route(<<"app/consumer/service", _::binary>>), do: BPE.Login
 
-  def route(<<"app/backoffice/reports", _::binary>>), do: BPE.Login
-  def route(<<"app/backoffice/tariffs", _::binary>>), do: BPE.Login
-  def route(<<"app/backoffice/domains", _::binary>>), do: BPE.Login
+  def route(<<"app/backoffice/reports", _::binary>>), do: EXO.Domains
+  def route(<<"app/backoffice/tariffs", _::binary>>), do: EXO.Domains
+  def route(<<"app/backoffice/domains", _::binary>>), do: EXO.Domains
 
   def route(""), do: BPE.Login
   def route(_) , do: BPE.Login
