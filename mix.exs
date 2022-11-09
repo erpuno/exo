@@ -21,7 +21,7 @@ defmodule EXO.Mixfile do
   end
 
   def application(),
-    do: [mod: {:exosculat, []},
+    do: [mod: {EXOSCULAT, []},
          applications: [:rocksdb,:ranch,:mnesia,:cowboy,:kvs,:syn,:bpe,:nitro,:form,:n2o]]
 
   def deps() do

@@ -7,7 +7,7 @@ config :n2o,
   port: 8051,
   tables: [:cookies, :file, :caching, :async],
   protocols: [:n2o_heart, :nitro_n2o, :n2o_ftp],
-  routes: :exo_route
+  routes: EXO.Route
 
 config :kvs,
   dba: :kvs_rocks,

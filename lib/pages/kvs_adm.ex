@@ -5,12 +5,12 @@ defmodule KVS.Index do
 
   def parse(_), do: []
 
-  def event(:init),
-    do:
+  def event(:init) do
       [:user, :writers, :session, :enode]
       |> Enum.map(fn x ->
        [ :nitro.clear(x),
          send(self(), {:direct, x})] end)
+  end
 
   def event(:user),
   do: :nitro.update(:user,
