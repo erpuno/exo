@@ -18,13 +18,13 @@ defmodule BPE.Pass do
 
                     FORM.but(id: :proceed, name: :proceed,
                              title: "Далі", class: [:button,:sgreen],
-                             sources: [:user,:otp],
+                             sources: [:number_phone_none,:auth_phone_none],
                              postback: {:"Next",:form.atom([:otp,:otp,name])})],
 
         fields:   [ FORM.field(id: :number, name: :number, type: :string,
                                title: "Логін:",  labelClass: :label),
 
-                    FORM.field(id: :auth, name: :auth, type: :string,
+                    FORM.field(id: :auth, name: :auth, type: :password,
                                title: "Пароль:",  labelClass: :label ) ] )
    end
 end

@@ -7,8 +7,6 @@ defmodule BPE.Create do
   def id(), do: EXO.act()
 
   def new(name,EXO.act(), _) do
-      :erlang.put(:process_type_pi_none, 'bpe_account')
-
       FORM.document(
 
 	name: :form.atom([:pi,name]),
@@ -21,7 +19,7 @@ defmodule BPE.Create do
 
     		    FORM.but(id: :form.atom([:pi,:proceed]),
                              title: "Створення", class: [:button,:sgreen],
-                             sources: [:process_type],  postback: {:"Spawn",[]})],
+                             sources: [:process_type_pi_none],  postback: {:"Spawn",[]})],
 
         fields:   [ FORM.field(name: :process_type, id: :process_type, type: :select,
                              title: "Тип:", tooltips: [], default: :bpe_account,
