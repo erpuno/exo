@@ -9,7 +9,7 @@ defmodule BPE.Login do
       :nitro.insert_bottom(:stand, html)
   end
 
-  def event({:"Next",_}), do: :nitro.redirect("bpe.htm")
+  def event({:"Next",_}), do: :nitro.redirect("profile.htm")
   def event({:"Close",_}), do: :nitro.redirect("index.html")
   def event(_), do: :ok
 
