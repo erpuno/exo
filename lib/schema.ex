@@ -3,7 +3,9 @@ defmodule EXO do
   require FORM
   require Record
 
-  Enum.each([ :account, :client, :card, :transaction, :act, :currency, :phone, :otp, :form ],
+  @schema [ :account, :client, :card, :transaction, :act, :currency, :phone, :otp, :field ]
+
+  Enum.each(@schema,
     fn t ->
       Enum.each(
         Record.extract_all(
@@ -28,21 +30,12 @@ defmodule EXO do
 
    def metainfo(), do: KVS.schema( name: :exo, tables: exo())
 
-   def fields(table) do
+   def table(name) do
        exo_fields = :application.get_env(:exosculat, :exo_fields, [])
-       {a,_} = :lists.unzip(:proplists.get_value(table, exo_fields, []))
-       a
+       {a,b} = :lists.unzip(:proplists.get_value(name, exo_fields, []))
+       KVS.table(name: name, fields: a, instance: b)
    end
 
-   def exo() do
-       [
-        KVS.table(name: :phone,       fields: fields(:phone),   instance: phone()),
-        KVS.table(name: :field,       fields: fields(:field),   instance: FORM.field()),
-        KVS.table(name: :account,     fields: fields(:account), instance: account()),
-        KVS.table(name: :client,      fields: fields(:client),      instance: client()),
-        KVS.table(name: :card,        fields: fields(:card),        instance: card()),
-        KVS.table(name: :transaction, fields: fields(:transaction), instance: transaction())
-       ]
-  end
+   def exo(), do: :lists.map(fn x -> table(x) end, @schema)
 
 end
