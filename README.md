@@ -50,22 +50,22 @@ $ open http://localhost:8051/app/login.htm
 
 * [EXO](lib/EXO.ex) Імпорт Erlang кортежів в Elixir
 * [exo_kvs](src/boot/exo_kvs.erl) Схема даних, її налаштування
-* [exo_route](src/pages/exo_route.erl) Налаштування маршрутів HTML сторінок для веб-серверу
-* [exosculat](src/exosculat.erl) Головний модуль Erlang/OTP додатку
+* [exo_route](lib/pages/exo_route.ex) Налаштування маршрутів HTML сторінок для веб-серверу
+* [exosculat](lib/application.ex) Головний модуль Erlang/OTP додатку
 
 ### Редактори форм
 
-* [bpe_pass](src/forms/bpe_pass.erl) Форма аутентифікації
-* [bpe_create](src/forms/bpe_create.erl) Форма створення процесу
+* [bpe_pass](lib/forms/bpe_pass.erl) Форма аутентифікації
+* [bpe_create](lib/forms/bpe_create.erl) Форма створення процесу
 * [bpe_row](src/forms/bpe_row.erl) Таблична форма-рядок відображення процесу
 * [bpe_trace](src/forms/bpe_row.erl) Таблична форма-рядок відображення кроку процесу
 
 ### Контролери сторінок
 
-* [bpe_act](src/pages/bpe_act.erl) Сторінка відображення історії процесу
-* [bpe_login](src/pages/bpe_login.erl) Сторінка аутентифікації
-* [bpe_index](src/pages/bpe_index.erl) Сторінка переліку всіх процесів BPE
-* [bpe_forms](src/pages/bpe_forms.erl) Сторінка відображення всіх форм системи FORM
+* [bpe_act](lib/pages/bpe_act.ex) Сторінка відображення історії процесу
+* [bpe_login](lib/pages/bpe_login.ex) Сторінка аутентифікації
+* [bpe_index](lib/pages/bpe_index.ex) Сторінка переліку всіх процесів BPE
+* [bpe_forms](lib/pages/bpe_forms.ex) Сторінка відображення всіх форм системи FORM
 * [kvs_adm](lib/pages/kvs_adm.ex) Сторінка даних KVS
 * [n2o_adm](lib/pages/n2o_adm.ex) Сторінка таблиць N2O
 * [mnesia_adm](lib/pages/mnesia_adm.ex) Сторінка даних MNESIA
