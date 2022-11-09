@@ -12,7 +12,7 @@ config :n2o,
 config :kvs,
   dba: :kvs_rocks,
   dba_st: :kvs_st,
-  schema: [:kvs, :kvs_stream, :bpe_metainfo, :exo_kvs]
+  schema: [:kvs, :kvs_stream, :bpe_metainfo, EXO]
 
 config :form,
   module: :form_backend,
