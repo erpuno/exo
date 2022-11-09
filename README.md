@@ -35,9 +35,24 @@ $ open http://localhost:8051/app/login.htm
 Структура проекту
 -----------------
 
-### Статичні HTML контейнери
+* Вікно споживача: Профіль, Споживання, Сервіси
+* Бек-офіс: Звітність, Тарифи, Ролі
+* Адміністратор: BPE, FORM, KVS, N2O, MNESIA
 
-* [index.html](priv/static/index.html) Домашня сторінка
+### Статичні HTML контейнери Споживача
+
+* [profile.htm](priv/static/profile.htm) Обліковий запис споживача
+* [consume.htm](priv/static/consume.htm) Споживання сервісів
+* [service.htm](priv/static/service.htm) Налаштування сервісів та тарифи
+
+### Статичні HTML контейнери Бек-офісу
+
+* [reports.htm](priv/static/reports.htm) Звітність
+* [tariffs.htm](priv/static/tariffs.htm) Тарифні моделі
+* [domains.htm](priv/static/domains.htm) Рольова модель
+
+### Статичні HTML контейнери Адміністратора
+
 * [login.htm](priv/static/login.htm) Сторінка авторизації
 * [bpe.htm](priv/static/bpe.htm) Сторінка всіх процесів
 * [form.htm](priv/static/form.htm) Сторінка всіх форм
@@ -54,10 +69,10 @@ $ open http://localhost:8051/app/login.htm
 
 ### Редактори форм
 
-* [bpe_pass](lib/forms/bpe_pass.erl) Форма аутентифікації
-* [bpe_create](lib/forms/bpe_create.erl) Форма створення процесу
-* [bpe_row](src/forms/bpe_row.erl) Таблична форма-рядок відображення процесу
-* [bpe_trace](src/forms/bpe_row.erl) Таблична форма-рядок відображення кроку процесу
+* [bpe_pass](lib/forms/bpe_pass.ex) Форма аутентифікації
+* [bpe_create](lib/forms/bpe_create.ex) Форма створення процесу
+* [bpe_row](lib/forms/bpe_row.ex) Таблична форма-рядок відображення процесу
+* [bpe_trace](lib/forms/bpe_row.ex) Таблична форма-рядок відображення кроку процесу
 
 ### Контролери сторінок
 
