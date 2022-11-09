@@ -54,10 +54,10 @@ $ open http://localhost:8051/app/login.htm
 
 ### Редактори форм
 
-* [bpe_pass](lib/forms/bpe_pass.erl) Форма аутентифікації
-* [bpe_create](lib/forms/bpe_create.erl) Форма створення процесу
-* [bpe_row](src/forms/bpe_row.erl) Таблична форма-рядок відображення процесу
-* [bpe_trace](src/forms/bpe_row.erl) Таблична форма-рядок відображення кроку процесу
+* [bpe_pass](lib/forms/bpe_pass.ex) Форма аутентифікації
+* [bpe_create](lib/forms/bpe_create.ex) Форма створення процесу
+* [bpe_row](lib/forms/bpe_row.ex) Таблична форма-рядок відображення процесу
+* [bpe_trace](lib/forms/bpe_row.ex) Таблична форма-рядок відображення кроку процесу
 
 ### Контролери сторінок
 
