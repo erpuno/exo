@@ -19,6 +19,10 @@ defmodule EXO.Route do
   def route(<<"app/bpe",     _::binary>>), do: BPE.Index
   def route(<<"app/process", _::binary>>), do: BPE.Act
   def route(<<"app/login",   _::binary>>), do: BPE.Login
+  def route(<<"app/home",    _::binary>>), do: BPE.Login
+  def route(<<"app/profile", _::binary>>), do: BPE.Login
+  def route(<<"app/consume", _::binary>>), do: BPE.Login
+  def route(<<"app/service", _::binary>>), do: BPE.Login
   def route("")                          , do: BPE.Login
   def route(_)                           , do: BPE.Login
 
