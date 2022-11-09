@@ -22,7 +22,7 @@ defmodule BPE.Act do
               :lists.map(fn x ->
                  {:step,no,step} = BPE.hist(x, :id)
                  name = :nitro.to_list(no) ++ '-' ++ :nitro.to_list(step)
-                 trace = :bpe_trace.new(:form.atom([:trace,name]),x,[])
+                 trace = BPE.Trace.new(:form.atom([:trace,name]),x,[])
                  :nitro.insert_bottom(:tableRow, trace)
               end, history)
        end
