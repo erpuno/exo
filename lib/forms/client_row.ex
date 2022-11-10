@@ -1,6 +1,5 @@
-defmodule EXO.Client.Row do
+defmodule Client.Row do
   require EXO
-  require BPE
   require NITRO
   def doc(), do: "Форма-рядок для відображення користувача системи."
   def id(), do: EXO.client()

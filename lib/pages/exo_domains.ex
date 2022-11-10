@@ -13,7 +13,7 @@ defmodule EXO.Domains do
        :nitro.insert_bottom(:frms, :form.new(mod.new(mod,mod.id(), []), mod.id(), []))
        :nitro.insert_bottom(:ctrl, NITRO.link(id: :creator, body: "Новий", postback: :create, class: [:button, :sgreen]))
        :nitro.hide(:frms)
-       :lists.map(fn x -> :nitro.insert_top(:tableRow, EXO.Client.Row.new(:form.atom([:row, x]), EXO.client(), [])) end, :kvs.all('/exo/user/client'))
+       :lists.map(fn x -> :nitro.insert_top(:tableRow, Client.Row.new(:form.atom([:row, x]), EXO.client(), [])) end, :kvs.all('/exo/user/client'))
    end
 
    def event(:create) do
@@ -23,7 +23,7 @@ defmodule EXO.Domains do
 
    def event({:"Spawn",_}) do
        id = :kvs.seq [], []
-       :nitro.insert_after(:header, EXO.Client.Row.new(:form.atom([:row,id]), EXO.client(), []))
+       :nitro.insert_after(:header, Client.Row.new(:form.atom([:row,id]), EXO.client(), []))
        :nitro.hide(:frms)
        :nitro.show(:ctrl)
     end
