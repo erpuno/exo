@@ -41,25 +41,25 @@ $ open http://localhost:8051/app/login.htm
 
 ### Статичні HTML контейнери Споживача
 
-* [profile.htm](priv/static/profile.htm) Обліковий запис споживача
-* [consume.htm](priv/static/consume.htm) Споживання сервісів
-* [service.htm](priv/static/service.htm) Налаштування сервісів та тарифи
+* [profile.htm](priv/static/consumer/profile.htm) Обліковий запис споживача
+* [consume.htm](priv/static/consumer/consume.htm) Споживання сервісів
+* [service.htm](priv/static/consumer/service.htm) Налаштування сервісів та тарифи
 
 ### Статичні HTML контейнери Бек-офісу
 
-* [reports.htm](priv/static/reports.htm) Звітність
-* [tariffs.htm](priv/static/tariffs.htm) Тарифні моделі
-* [domains.htm](priv/static/domains.htm) Рольова модель
+* [reports.htm](priv/static/backoffice/reports.htm) Звітність
+* [tariffs.htm](priv/static/backoffice/tariffs.htm) Тарифні моделі
+* [domains.htm](priv/static/backoffice/domains.htm) Рольова модель
 
 ### Статичні HTML контейнери Адміністратора
 
-* [login.htm](priv/static/login.htm) Сторінка авторизації
-* [bpe.htm](priv/static/bpe.htm) Сторінка всіх процесів
-* [form.htm](priv/static/form.htm) Сторінка всіх форм
-* [process.htm](priv/static/process.htm) Сторінка історії процесу
-* [kvs.htm](priv/static/kvs.htm) Сторінка всіх ланцюжків даних
-* [n2o.htm](priv/static/n2o.htm) Сторінка службових таблиць сервісів N2O
-* [mnesia.htm](priv/static/mnesia.htm) Сторінка таблиць бази даних MNESIA
+* [login.htm](priv/static/admin/login.htm) Сторінка авторизації
+* [bpe.htm](priv/static/admin/bpe.htm) Сторінка всіх процесів
+* [form.htm](priv/static/admin/form.htm) Сторінка всіх форм
+* [process.htm](priv/static/admin/process.htm) Сторінка історії процесу
+* [kvs.htm](priv/static/admin/kvs.htm) Сторінка всіх ланцюжків даних
+* [n2o.htm](priv/static/admin/n2o.htm) Сторінка службових таблиць сервісів N2O
+* [mnesia.htm](priv/static/admin/mnesia.htm) Сторінка таблиць бази даних MNESIA
 
 ### Базові модулі
 
