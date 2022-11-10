@@ -33,15 +33,12 @@ defmodule N2O.Index do
 
   def event(:writers),
     do:
-      :application.get_env(:n2o, :tables, [])
-      |> Enum.map(fn table ->
-        size = :proplists.get_value( :size, :ets.info(table),0)
-        :nitro.insert_bottom(
-          :writers,
-          NITRO.panel(body:
+        :lists.map(fn table ->
+          size = :proplists.get_value( :size, :ets.info(table),0)
+          :nitro.insert_bottom(:writers, NITRO.panel(body:
           [NITRO.link(body: :nitro.to_list(table), postback: {:link, table}),
            ' (' ++ :nitro.to_list(size) ++ ')']))
-      end)
+        end, :application.get_env(:n2o, :tables, []))
 
   def event(_), do: []
 
