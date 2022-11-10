@@ -26,9 +26,8 @@ defmodule N2O.Index do
   def event({:link, table}),
   do: [
       :nitro.clear(:feeds),
-      :ets.tab2list(table) |> Enum.map(fn t ->
-        :nitro.insert_bottom(:feeds,
-          NITRO.panel(body: :nitro.compact(t))) end)
+      :lists.map(fn t -> :nitro.insert_bottom(:feeds,
+          NITRO.panel(body: :nitro.compact(t))) end, :ets.tab2list(table))
     ]
 
   def event(:writers),
