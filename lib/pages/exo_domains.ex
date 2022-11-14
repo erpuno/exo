@@ -37,7 +37,7 @@ defmodule EXO.Domains do
        :nitro.show(:ctrl)
     end
 
-    def event({:"Discard",[]}) do
+    def event({:"Close",[]}) do
         :nitro.hide(:frms)
         :nitro.show(:ctrl)
     end
