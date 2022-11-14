@@ -16,7 +16,7 @@ config :kvs,
 
 config :form,
   module: :form_backend,
-  registry: [BPE.Create,BPE.Pass,BPE.Row,BPE.Trace,Client.Row]
+  registry: [BPE.Create,BPE.Pass,BPE.Row,BPE.Trace,Client.Row,Client.Form]
 
 config :bpe,
   procmodules: [:bpe, :bpe_account],

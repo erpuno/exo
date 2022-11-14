@@ -2,24 +2,25 @@
 -define(CLIENT_HRL, "client_hrl").
 
 -record(client, {
-        id,
-        next,prev,
-        bank,
-        iban,
-        local,
-        type,
-        status,
+        id = kvs:seq([],[]),
+        next = [],prev = [],
+        bank = [],
+        iban = [],
+        local = [],
+        type = consumer,
+        status = online,
         program = [],
-        amount,
+        amount = [],
         default_account,
         accounts = "/exo/:bank/:id/accounts",
-        default_card,
+        default_card = [],
         cards = "/exo/:bank/:id/cards",
-        phone,
-        tax,
-        names,
-        surnames,
-        display_name,
-        registration }).
+        phone = <<>>,
+        tax = [],
+        names = <<>>,
+        surnames = <<>>,
+        date = [],
+        display_name = [],
+        registration = [] }).
 
 -endif.
