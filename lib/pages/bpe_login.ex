@@ -26,7 +26,7 @@ defmodule BPE.Login do
       res = findPhone(phone, clients)
       :io.format '~p', [res]
       case res do
-          [x] -> case EXO.client(x, :type) do
+          [x] -> case :nitro.to_binary(EXO.client(x, :type)) do
                         "admin" -> :nitro.redirect("backoffice/reports.htm")
                         "consumer" -> :nitro.redirect("consumer/profile.htm")
                  end
