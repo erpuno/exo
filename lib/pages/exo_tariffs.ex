@@ -11,8 +11,6 @@ defmodule EXO.Tarrifs do
        :nitro.clear(:ctrl)
        mod = Program.Form
        form = :form.new(mod.new(mod,mod.id(), []), mod.id(), [])
-#       :io.format 'FORM: ~p', [form]
-#       :io.format 'FORM: ~ts', [form |> :nitro.render |> :erlang.iolist_to_binary]
        :nitro.insert_bottom(:frms, form)
        :nitro.insert_bottom(:ctrl, NITRO.link(id: :creator, body: "Новий", postback: :create, class: [:button, :sgreen]))
        :nitro.hide(:frms)
