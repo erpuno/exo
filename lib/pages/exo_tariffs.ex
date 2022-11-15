@@ -25,10 +25,11 @@ defmodule EXO.Tarrifs do
 
    def event({:"CreateTariff", _}) do
        date = :date_program_none |> :nitro.q
+       type = :type_program_none |> :nitro.q
        name = :name_program_none |> :nitro.q
        formula = :formula_program_none |> :nitro.q
        id = :kvs.seq([],[])
-       tariff = EXO.program(date: date, id: id, formula: formula, name: name)
+       tariff = EXO.program(date: date, id: id, formula: formula, name: name, type: type)
        nitro = :form.new Program.Row.new(:form.atom([:row,name]), tariff, []), tariff, []
        :kvs.append tariff, '/exo/tariffs'
        :nitro.insert_top(:tableRow, nitro)

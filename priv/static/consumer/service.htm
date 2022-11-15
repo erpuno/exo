@@ -26,28 +26,43 @@
         <section>
             <h2>СЕРВІСИ</h2>
             <p>Вибір тарифікаційної моделі та підключення послуг.</p>
+            <br>
+            <div id="ctrl"> </div>
+            <div id="frms"></div>
+            <br>
         </section>
    </article>
 </aside>
 
 <main>
    <section>
-            <table class="table" align="center"><thead id="head"><tr class="trGroup"><td width="33%"><h4>Послуги</h4></td><td width="66%"><h4>Тарифи</h4></td></tr></thead></table><br />
-                 <table><tbody><tr valign="top"><td>
-                      <div class="td">
-                           <div class="table">
-                                <div id="serviceTypesHead" class="trGroup"></div>
-                                <div id="serviceTypesRow" class="trGroup"></div>
-                           </div>
-                      </div>
-                 </td><td>
-                      <div class="td">
-                           <div class="table">
-                                <div id="TariffsHead" class="trGroup"></div>
-                                <div id="TariffsRow" class="trGroup"></div>
-                           </div>
-                      </div>
-                 </td></tr></tbody></table>
+            <table class="table" align="center">
+              <thead id="head"><tr class="trGroup">
+                <td width="33%"><h4>Послуги</h4></td>
+                <td width="66%"><h4>Тарифи</h4></td>
+              </tr></thead>
+            </table>
+
+           <br />
+
+          <table>
+               <tbody><tr valign="top">
+               <td>
+                  <div class="td">
+                  <div class="table">
+                  <div id="serviceTypesHead" class="trGroup"></div>
+                  <div id="serviceTypesRow" class="trGroup"></div>
+                 </div>
+                 </div>
+               </td>
+               <td>
+                  <div class="td">
+                   <div class="table">
+                    <div id="tariffsHead" class="trGroup"></div>
+                    <div id="tariffsRow" class="trGroup"></div>
+                   </div>
+                 </div>
+             </td></tr></tbody></table>
     </section>
 </main>
 
@@ -58,6 +73,8 @@
     <script src='https://ws.n2o.dev/priv/n2o.js'></script>
     <script src='https://ws.n2o.dev/priv/ftp.js'></script>
     <script src='https://nitro.n2o.dev/priv/js/nitro.js'></script>
+    <script src='https://nitro.n2o.dev/priv/js/nitro.js'></script>
+    <script src='https://nitro.n2o.dev/priv/js/calendar.js'></script>
     <script>host = location.hostname; port = 8051;</script>
     <script>protos = [$bert]; N2O_start();</script>
 
