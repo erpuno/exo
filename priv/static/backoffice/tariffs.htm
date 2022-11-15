@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/blank.css" />
     <link rel="stylesheet" href="../css/forms.css" />
     <link rel="stylesheet" href="../css/admin.css" />
+    <link rel="stylesheet" href="https://nitro.n2o.dev/priv/css/calendar.css" />
 </head>
 
 <body>
@@ -27,6 +28,21 @@
         <section>
             <h2>ТАРИФИ</h2>
             <p>Налаштування тарифних моделей для споживачів.</p>
+            <br>
+            <div id="ctrl"> </div>
+            <div id="frms"></div>
+            <br>
+        </section>
+            <div class="table">
+            <div id="tableHead" class="trGroup">
+            </div>
+            <div id="tableRow" class="trGroup">
+            </div>
+            </div>
+            <br>
+        <section>
+          <small>Зроблено з любов'ю <span class="heart">❤</span> до BPE</small>
+        </section>
         </section>
    </article>
 </aside>
@@ -38,6 +54,7 @@
     <script src='https://ws.n2o.dev/priv/n2o.js'></script>
     <script src='https://ws.n2o.dev/priv/ftp.js'></script>
     <script src='https://nitro.n2o.dev/priv/js/nitro.js'></script>
+    <script src='https://nitro.n2o.dev/priv/js/calendar.js'></script>
     <script>host = location.hostname; port = 8051;</script>
     <script>protos = [$bert]; N2O_start();</script>
 
