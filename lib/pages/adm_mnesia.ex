@@ -1,4 +1,4 @@
-defmodule N2O.Index do
+defmodule ADM.MNESIA do
   require NITRO
   require Logger
 
@@ -26,20 +26,26 @@ defmodule N2O.Index do
   def event({:link, table}),
   do: [
       :nitro.clear(:feeds),
-      :lists.map(fn t -> :nitro.insert_bottom(:feeds,
-          NITRO.panel(body: :nitro.compact(t))) end, :ets.tab2list(table))
+      :ets.tab2list(table) |> Enum.map(fn t ->
+        :nitro.insert_bottom(:feeds,
+          NITRO.panel(body: :nitro.compact(t))) end)
     ]
 
   def event(:writers),
     do:
-        :lists.map(fn table ->
-          size = :proplists.get_value( :size, :ets.info(table),0)
-          :nitro.insert_bottom(:writers, NITRO.panel(body:
+      tables()
+      |> Enum.map(fn table ->
+        size = :mnesia.table_info(table, :size)
+        :nitro.insert_bottom(
+          :writers,
+          NITRO.panel(body:
           [NITRO.link(body: :nitro.to_list(table), postback: {:link, table}),
            ' (' ++ :nitro.to_list(size) ++ ')']))
-        end, :application.get_env(:n2o, :tables, []))
+      end)
 
   def event(_), do: []
+
+  def tables(), do: :proplists.get_value(:tables, :mnesia.system_info(:all), [])
 
   def ram(os), do: :nitro.compact(os)
 end

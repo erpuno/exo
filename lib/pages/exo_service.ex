@@ -6,7 +6,9 @@ defmodule EXO.Service do
    def showTariffs(type) do
       :lists.map(fn x ->
         case :nitro.to_binary(EXO.program(x, :type)) do
-           t when t == type -> :nitro.insert_top(:tariffsRow, Program.Row.new(:form.atom([:row, EXO.program(x, :id)]), x, []))
+           t when t == type ->
+               :nitro.insert_top(:tariffsRow,
+                   Program.Row.new(:form.atom([:row, EXO.program(x, :id)]), x, []))
            _ -> :skip
       end end, :kvs.all('/exo/tariffs'))
    end
@@ -21,14 +23,24 @@ defmodule EXO.Service do
        mod = Account.Form
        form = :form.new(mod.new(mod,mod.id(), []), mod.id(), [])
        :nitro.insert_bottom(:frms, form)
-       :nitro.insert_bottom(:ctrl, NITRO.link(id: :creator, body: "Новий", postback: :create, class: [:button, :sgreen]))
+       :nitro.insert_bottom(:ctrl,
+          NITRO.link(id: :creator, body: "Новий",
+                     postback: :create, class: [:button, :sgreen]))
        :nitro.hide(:frms)
 
       :nitro.insert_top(:serviceTypesHeader, serviceHeader())
-      :nitro.insert_top(:serviceTypesRow, NITRO.panel(class: :td, body: NITRO.link(postback: {:showTariffs, "gas"}, body: "Газ")))
-      :nitro.insert_top(:serviceTypesRow, NITRO.panel(class: :td, body: NITRO.link(postback: {:showTariffs, "oil"}, body: "Нафта")))
-      :nitro.insert_top(:serviceTypesRow, NITRO.panel(class: :td, body: NITRO.link(postback: {:showTariffs, "electricity"}, body: "Електрика")))
-      :nitro.insert_top(:serviceTypesRow, NITRO.panel(class: :td, body: NITRO.link(postback: {:showTariffs, "internet"}, body: "Інтернет")))
+      :nitro.insert_top(:serviceTypesRow,
+         NITRO.panel(class: :td,
+                     body: NITRO.link(postback: {:showTariffs, "gas"}, body: "Газ")))
+      :nitro.insert_top(:serviceTypesRow,
+         NITRO.panel(class: :td,
+                     body: NITRO.link(postback: {:showTariffs, "oil"}, body: "Нафта")))
+      :nitro.insert_top(:serviceTypesRow,
+         NITRO.panel(class: :td,
+                     body: NITRO.link(postback: {:showTariffs, "electricity"}, body: "Електрика")))
+      :nitro.insert_top(:serviceTypesRow,
+         NITRO.panel(class: :td,
+                     body: NITRO.link(postback: {:showTariffs, "internet"}, body: "Інтернет")))
 
       showTariffs("internet")
    end

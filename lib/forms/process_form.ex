@@ -1,12 +1,12 @@
 defmodule BPE.Create do
-  require EXO
+  require BPE
   require FORM
 
   def doc(), do: "Форма створення BPE/BPMN процесів."
 
-  def id(), do: EXO.act()
+  def id(), do: BPE.process()
 
-  def new(name,_, _) do
+  def new(name, _, _) do
       :erlang.put(:process_type_pi_none, "bpe_account")
       FORM.document(
 

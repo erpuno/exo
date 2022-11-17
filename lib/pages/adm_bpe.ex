@@ -1,4 +1,4 @@
-defmodule BPE.Index do
+defmodule ADM.BPE do
    require BPE
    require NITRO
 

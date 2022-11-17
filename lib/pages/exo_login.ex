@@ -1,9 +1,9 @@
-defmodule BPE.Login do
+defmodule ADM.Login do
   require FORM
   require EXO
 
   def findPhone(phone, list) do
-      :lists.foldl(fn x, acc -> 
+      :lists.foldl(fn x, acc ->
          case EXO.client(x, :phone) == phone do
               true -> [x|acc]
               false -> acc

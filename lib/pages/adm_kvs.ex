@@ -1,15 +1,16 @@
-defmodule MNESIA.Index do
+defmodule ADM.KVS do
   require NITRO
+  require KVS
   require Logger
 
   def parse(_), do: []
 
-  def event(:init),
-    do:
+  def event(:init) do
       [:user, :writers, :session, :enode]
       |> Enum.map(fn x ->
        [ :nitro.clear(x),
          send(self(), {:direct, x})] end)
+  end
 
   def event(:user),
   do: :nitro.update(:user,
@@ -23,29 +24,28 @@ defmodule MNESIA.Index do
   do: :nitro.update(:enode,
       NITRO.span(body: :nitro.compact(:erlang.node())))
 
-  def event({:link, table}),
+  def event({:link, i}),
   do: [
       :nitro.clear(:feeds),
-      :ets.tab2list(table) |> Enum.map(fn t ->
+      :kvs.feed(i) |> Enum.map(fn t ->
         :nitro.insert_bottom(:feeds,
           NITRO.panel(body: :nitro.compact(t))) end)
     ]
 
   def event(:writers),
     do:
-      tables()
-      |> Enum.map(fn table ->
-        size = :mnesia.table_info(table, :size)
+      :writer
+      |> :kvs.all()
+      |> :lists.sort()
+      |> Enum.map(fn KVS.writer(id: i, count: c) ->
         :nitro.insert_bottom(
           :writers,
           NITRO.panel(body:
-          [NITRO.link(body: :nitro.to_list(table), postback: {:link, table}),
-           ' (' ++ :nitro.to_list(size) ++ ')']))
+          [NITRO.link(body: i, postback: {:link, i}),
+           ' (' ++ :nitro.to_list(c) ++ ')']))
       end)
 
   def event(_), do: []
-
-  def tables(), do: :proplists.get_value(:tables, :mnesia.system_info(:all), [])
 
   def ram(os), do: :nitro.compact(os)
 end

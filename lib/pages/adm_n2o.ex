@@ -1,16 +1,15 @@
-defmodule KVS.Index do
+defmodule ADM.N2O do
   require NITRO
-  require KVS
   require Logger
 
   def parse(_), do: []
 
-  def event(:init) do
+  def event(:init),
+    do:
       [:user, :writers, :session, :enode]
       |> Enum.map(fn x ->
        [ :nitro.clear(x),
          send(self(), {:direct, x})] end)
-  end
 
   def event(:user),
   do: :nitro.update(:user,
@@ -24,26 +23,21 @@ defmodule KVS.Index do
   do: :nitro.update(:enode,
       NITRO.span(body: :nitro.compact(:erlang.node())))
 
-  def event({:link, i}),
+  def event({:link, table}),
   do: [
       :nitro.clear(:feeds),
-      :kvs.feed(i) |> Enum.map(fn t ->
-        :nitro.insert_bottom(:feeds,
-          NITRO.panel(body: :nitro.compact(t))) end)
+      :lists.map(fn t -> :nitro.insert_bottom(:feeds,
+          NITRO.panel(body: :nitro.compact(t))) end, :ets.tab2list(table))
     ]
 
   def event(:writers),
     do:
-      :writer
-      |> :kvs.all()
-      |> :lists.sort()
-      |> Enum.map(fn KVS.writer(id: i, count: c) ->
-        :nitro.insert_bottom(
-          :writers,
-          NITRO.panel(body:
-          [NITRO.link(body: i, postback: {:link, i}),
-           ' (' ++ :nitro.to_list(c) ++ ')']))
-      end)
+        :lists.map(fn table ->
+          size = :proplists.get_value( :size, :ets.info(table),0)
+          :nitro.insert_bottom(:writers, NITRO.panel(body:
+          [NITRO.link(body: :nitro.to_list(table), postback: {:link, table}),
+           ' (' ++ :nitro.to_list(size) ++ ')']))
+        end, :application.get_env(:n2o, :tables, []))
 
   def event(_), do: []
 
