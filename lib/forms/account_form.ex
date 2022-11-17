@@ -3,6 +3,7 @@ defmodule Account.Form do
   require NITRO
   require FORM
   require BPE
+  def doc(), do: "Форма вводу облікового запису користувача системи"
   def id, do: EXO.account()
   def new(name, _program, _) do
       :erlang.put(:type_account_none, :type)

@@ -3,6 +3,7 @@ defmodule Client.Form do
   require NITRO
   require FORM
   require BPE
+  def doc(), do: "Форма вводу користувача системи"
   def id, do: EXO.client()
   def new([], _, _), do: []
   def new(name, _client, _) do

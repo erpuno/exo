@@ -3,6 +3,7 @@ defmodule Program.Form do
   require NITRO
   require FORM
   require BPE
+  def doc(), do: "Форма вводу тарифної програми"
   def id, do: EXO.program()
   def new(name, _program, _) do
       :erlang.put(:type_program_none, :type)

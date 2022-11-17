@@ -3,6 +3,7 @@ defmodule Program.Row do
   require NITRO
   require FORM
   require BPE
+  def doc(), do: "Таблична форма тарифної програми"
   def id, do: EXO.program()
   def new(_name, program, _) do
       type = EXO.program(program, :type)
