@@ -79,12 +79,12 @@ $ open http://localhost:8051/app/login.htm
 
 ### Контролери сторінок
 
-* [adm_act](lib/pages/adm_act.ex) Сторінка відображення історії процесу
-* [adm_bpe](lib/pages/adm_bpe.ex) Сторінка переліку всіх процесів BPE
-* [adm_form](lib/pages/adm_form.ex) Сторінка відображення всіх форм системи FORM
-* [adm_kvs](lib/pages/adm_kvs.ex) Сторінка даних KVS
-* [adm_n2o](lib/pages/adm_n2o.ex) Сторінка таблиць N2O
-* [adm_mnesia](lib/pages/adm_mnesia.ex) Сторінка даних MNESIA
+* [adm_act](lib/pages/admin/adm_act.ex) Сторінка відображення історії процесу
+* [adm_bpe](lib/pages/admin/adm_bpe.ex) Сторінка переліку всіх процесів BPE
+* [adm_form](lib/pages/admin/adm_form.ex) Сторінка відображення всіх форм системи FORM
+* [adm_kvs](lib/pages/admin/adm_kvs.ex) Сторінка даних KVS
+* [adm_n2o](lib/pages/admin/adm_n2o.ex) Сторінка таблиць N2O
+* [adm_mnesia](lib/pages/admin/adm_mnesia.ex) Сторінка даних MNESIA
 * [exo_login](lib/pages/exo_login.ex) Сторінка аутентифікації
 * [exo_tariffs](lib/pages/exo_tariffs.ex) Сторінка налаштування тарифних моделей
 * [exo_domains](lib/pages/exo_domains.ex) Сторінка адміністрування користувачів системи
