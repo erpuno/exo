@@ -9,17 +9,23 @@ defmodule ADM.BPE do
        :nitro.clear(:frms)
        :nitro.clear(:ctrl)
        mod = BPE.Create
-       :nitro.insert_bottom(:frms, :form.new(mod.new(mod,mod.id(), []), mod.id(), []))
-       :nitro.insert_bottom(:ctrl, NITRO.link(id: :creator, body: "Новий", postback: :create, class: [:button, :sgreen]))
+       :nitro.insert_bottom(:frms,
+          :form.new(mod.new(mod,mod.id(), []), mod.id(), []))
+       :nitro.insert_bottom(:ctrl,
+          NITRO.link(id: :creator, body: "Новий", postback: :create, class: [:button, :sgreen]))
        :nitro.hide(:frms)
-       :lists.map(fn x -> :nitro.insert_top(:tableRow, BPE.Row.new(:form.atom([:row, BPE.process(x, :id)]), x, [])) end, :kvs.all('/bpe/proc'))
+       :lists.map(fn x ->
+          :nitro.insert_top(:tableRow,
+             BPE.Row.new(:form.atom([:row, BPE.process(x, :id)]), x, [])) end,
+          :kvs.all('/bpe/proc'))
    end
 
    def event({:complete,id}) do
        proc = :bpe.load(id)
        :bpe.start(proc,[])
        :bpe.next(id)
-       :nitro.update(:form.atom([:tr,:row,id]), BPE.Row.new(:form.atom([:row,id]), proc,[]))
+       :nitro.update(:form.atom([:tr,:row,id]),
+           BPE.Row.new(:form.atom([:row,id]), proc,[]))
    end
 
    def event(:create) do

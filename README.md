@@ -4,7 +4,8 @@ EXO: Тарифікація та розрахунки
 [![Hex pm](http://img.shields.io/hexpm/v/exosculat.svg?style=flat)](https://hex.pm/packages/exosculat)
 [![Actions Status](https://github.com/erpuno/exo/workflows/mix/badge.svg)](https://github.com/erpuno/exo/actions)
 
-EXO (EXOSCULAT, рахунок латиною) — автоматизована система обліку наданих послуг, їх тарифікації і виставляння рахунків для оплати.
+EXO (EXOSCULAT, рахунок латиною) — автоматизована система обліку наданих послуг,
+їх тарифікації і виставляння рахунків для оплати.
 EXO — це універсальний менеджер облікових записів (клієнтських рахунків),
 які містять історію тарифікованих транзакцій. Облікові записи контролюються BPMN процесами,
 активності яких визначені Erlang функціями. EXO, як приклад <a href="https://erp.uno">ERP.UNO</a>
@@ -35,9 +36,10 @@ $ open http://localhost:8051/app/login.htm
 Структура проекту
 -----------------
 
-* Вікно споживача: Профіль, Споживання, Сервіси
-* Бек-офіс: Звітність, Тарифи, Ролі
+* Сторінка авторизації
 * Адміністратор: BPE, FORM, KVS, N2O, MNESIA
+* Бек-офіс: Звітність, Тарифи, Ролі
+* Вікно споживача: Профіль, Споживання, Сервіси
 
 ### Статичні HTML контейнери Споживача
 
@@ -64,25 +66,29 @@ $ open http://localhost:8051/app/login.htm
 ### Базові модулі
 
 * [application](lib/application.ex) Головний модуль Erlang/OTP додатку
-* [schema](lib/schema.ex) хема даних, її налаштування
+* [schema](lib/schema.ex) Схема даних, її налаштування
 * [routes](lib/routes.ex) Налаштування маршрутів HTML сторінок для веб-серверу
+* [boot](lib/boot.ex) Первинна ініціалізація тестових даних
 
 ### Редактори форм
 
-* [bpe_pass](lib/forms/bpe_pass.ex) Форма аутентифікації
-* [bpe_create](lib/forms/bpe_create.ex) Форма створення процесу
-* [bpe_row](lib/forms/bpe_row.ex) Таблична форма-рядок відображення процесу
-* [bpe_trace](lib/forms/bpe_row.ex) Таблична форма-рядок відображення кроку процесу
+* [phone_form](lib/forms/phone_form.ex) Форма аутентифікації
+* [process_form](lib/forms/process_form.ex) Форма створення процесу
+* [process_row](lib/forms/process_row.ex) Таблична форма-рядок відображення процесу
+* [hist_row](lib/forms/hist_row.ex) Таблична форма-рядок відображення кроку процесу
 
 ### Контролери сторінок
 
-* [bpe_act](lib/pages/bpe_act.ex) Сторінка відображення історії процесу
-* [bpe_login](lib/pages/bpe_login.ex) Сторінка аутентифікації
-* [bpe_index](lib/pages/bpe_index.ex) Сторінка переліку всіх процесів BPE
-* [bpe_forms](lib/pages/bpe_forms.ex) Сторінка відображення всіх форм системи FORM
-* [kvs_adm](lib/pages/kvs_adm.ex) Сторінка даних KVS
-* [n2o_adm](lib/pages/n2o_adm.ex) Сторінка таблиць N2O
-* [mnesia_adm](lib/pages/mnesia_adm.ex) Сторінка даних MNESIA
+* [adm_act](lib/pages/adm_act.ex) Сторінка відображення історії процесу
+* [adm_bpe](lib/pages/adm_bpe.ex) Сторінка переліку всіх процесів BPE
+* [adm_forms](lib/pages/adm_form.ex) Сторінка відображення всіх форм системи FORM
+* [adm_kvs](lib/pages/adm_kvs.ex) Сторінка даних KVS
+* [adm_n2o](lib/pages/adm_n2o.ex) Сторінка таблиць N2O
+* [adm_mnesia](lib/pages/adm_mnesia.ex) Сторінка даних MNESIA
+* [exo_login](lib/pages/exo_login.ex) Сторінка аутентифікації
+* [exo_tariffs](lib/pages/exo_tariffs.ex) Сторінка налаштування тарифних моделей
+* [exo_domains](lib/pages/exo_domains.ex) Сторінка адміністрування користувачів системи
+* [exo_service](lib/pages/exo_service.ex) Сторінка підключення сервісів споживача
 
 Аутентифікація
 --------------
