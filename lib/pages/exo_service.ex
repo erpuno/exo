@@ -4,7 +4,8 @@ defmodule EXO.Service do
    require NITRO
 
    def showTariffs(type) do
-      :lists.map(fn x -> case EXO.program(x, :type) do
+      :lists.map(fn x ->
+        case :nitro.to_binary(EXO.program(x, :type)) do
            t when t == type -> :nitro.insert_top(:tariffsRow, Program.Row.new(:form.atom([:row, EXO.program(x, :id)]), x, []))
            _ -> :skip
       end end, :kvs.all('/exo/tariffs'))

@@ -1,4 +1,4 @@
-defmodule EXO.Clients do
+defmodule EXO.Boot do
   require EXO
   def clients() do
        date = :calendar.now_to_datetime :erlang.timestamp
@@ -16,9 +16,9 @@ defmodule EXO.Clients do
   def programs() do
       date = :calendar.now_to_datetime :erlang.timestamp
       sample = [
-          EXO.program(id: :kvs.seq([],[]), name: "БАЗОВИЙ", type: :telecom, date: date),
-          EXO.program(id: :kvs.seq([],[]), name: "СТАНДАРТ", type: :telecom, date: date),
-          EXO.program(id: :kvs.seq([],[]), name: "РОЗРИШЕНИЙ", type: :telecom, date: date),
+          EXO.program(id: :kvs.seq([],[]), name: "БАЗОВИЙ", type: :internet, date: date),
+          EXO.program(id: :kvs.seq([],[]), name: "СТАНДАРТ", type: :internet, date: date),
+          EXO.program(id: :kvs.seq([],[]), name: "РОЗРИШЕНИЙ", type: :internet, date: date),
           EXO.program(id: :kvs.seq([],[]), name: "БАЗОВИЙ", type: :electricity, date: date),
           EXO.program(id: :kvs.seq([],[]), name: "СТАНДАРТ", type: :electricity, date: date),
           EXO.program(id: :kvs.seq([],[]), name: "РОЗРИШЕНИЙ", type: :electricity, date: date),
