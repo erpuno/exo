@@ -11,7 +11,8 @@ defmodule BPE.Trace do
       docs = BPE.hist(hist, :docs)
       NITRO.panel(id: :form.atom([:tr,:nitro.to_list(name)]), class: :td, body: [
         NITRO.panel(class: :column6,   body: name(task) ),
-        NITRO.panel(class: :column20,  body: :string.join(:lists.map(fn x -> :nitro.to_list([:erlang.element(1,x)]) end,docs),', '))
+        NITRO.panel(class: :column20,  body:
+           :string.join(:lists.map(fn x -> :nitro.to_list([:erlang.element(1,x)]) end,docs),', '))
        ])
   end
 

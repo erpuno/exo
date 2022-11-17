@@ -12,7 +12,8 @@ defmodule EXO.Tarrifs do
        mod = Program.Form
        form = :form.new(mod.new(mod,mod.id(), []), mod.id(), [])
        :nitro.insert_bottom(:frms, form)
-       :nitro.insert_bottom(:ctrl, NITRO.link(id: :creator, body: "Новий", postback: :create, class: [:button, :sgreen]))
+       :nitro.insert_bottom(:ctrl,
+          NITRO.link(id: :creator, body: "Новий", postback: :create, class: [:button, :sgreen]))
        :nitro.hide(:frms)
        :lists.map(fn x -> :nitro.insert_top(:tableRow,
            Program.Row.new(:form.atom([:row, EXO.program(x, :id)]), x, [])) end, :kvs.all('/exo/tariffs'))

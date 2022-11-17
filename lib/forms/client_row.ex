@@ -12,7 +12,8 @@ defmodule Client.Row do
       date = EXO.client(client, :date)
 
       NITRO.panel(id: :form.atom([:tr,name]), class: :td, body: [
-        NITRO.panel(class: :column20,  body: NITRO.link(href: "user.htm?p=" <> :nitro.to_binary(phone), body: names <> " " <> surnames)),
+        NITRO.panel(class: :column20,  body:
+          NITRO.link(href: "user.htm?p=" <> :nitro.to_binary(phone), body: names <> " " <> surnames)),
         NITRO.panel(class: :column20,  body: :nitro.to_binary type),
         NITRO.panel(class: :column20,  body: :nitro.compact date),
         NITRO.panel(class: :column20,  body: :nitro.compact phone),

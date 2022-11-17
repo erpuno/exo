@@ -1,8 +1,8 @@
-defmodule ADM.Login do
+defmodule EXO.Login do
   require FORM
   require EXO
 
-  def findPhone(phone, list) do
+  def findByPhone(phone, list) do
       :lists.foldl(fn x, acc ->
          case EXO.client(x, :phone) == phone do
               true -> [x|acc]
@@ -23,7 +23,7 @@ defmodule ADM.Login do
   def event({:"Next",_}) do
       phone = :nitro.q(:number_phone_none)
       clients = :kvs.all '/exo/clients'
-      res = findPhone(phone, clients)
+      res = findByPhone(phone, clients)
       case res do
           [x] -> case :nitro.to_binary(EXO.client(x, :type)) do
                         "admin" -> :nitro.redirect("backoffice/reports.htm")

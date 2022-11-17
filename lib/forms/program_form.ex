@@ -3,6 +3,7 @@ defmodule Program.Form do
   require NITRO
   require FORM
   require BPE
+
   def doc(), do: "Форма вводу тарифної програми"
   def id, do: EXO.program()
   def new(name, _program, _) do
@@ -19,7 +20,8 @@ defmodule Program.Form do
                          name: :proceed,
                          title: "Створити",
                          class: [:button,:sgreen],
-                         sources: [:name_program_none,:type_program_none,:date_program_none,:formula_program_none],
+                         sources: [:name_program_none,:type_program_none,
+                                   :date_program_none,:formula_program_none],
                          postback: {:"CreateTariff", :form.atom([:program, name])})],
         fields:   [ FORM.field(id: :name,
                          name: :name,
