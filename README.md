@@ -73,9 +73,9 @@ $ open http://localhost:8051/app/login.htm
 ### Редактори форм
 
 * [phone_form](lib/forms/phone_form.ex) Форма аутентифікації
-* [process_form](lib/forms/process_form.ex) Форма створення процесу
-* [process_row](lib/forms/process_row.ex) Таблична форма-рядок відображення процесу
-* [hist_row](lib/forms/hist_row.ex) Таблична форма-рядок відображення кроку процесу
+* [process_form](lib/forms/admin/process_form.ex) Форма створення процесу
+* [process_row](lib/forms/admin/process_row.ex) Таблична форма-рядок відображення процесу
+* [hist_row](lib/forms/admin/hist_row.ex) Таблична форма-рядок відображення кроку процесу
 
 ### Контролери сторінок
 
