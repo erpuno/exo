@@ -10,15 +10,15 @@ defmodule BPE.Create do
       :erlang.put(:process_type_pi_none, "bpe_account")
       FORM.document(
 
-	name: :form.atom([:pi,name]),
+        name: :form.atom([:pi,name]),
 
         sections: [ FORM.sec(name: ["Новий процес: "]) ],
 
         buttons:  [ FORM.but(id: :form.atom([:pi,:decline]),
-			     title: "Відміна", class: :cancel,
-			     postback: {:"Discard",[]} ),
+                             title: "Відміна", class: :cancel,
+                             postback: {:"Discard",[]} ),
 
-    		    FORM.but(id: :form.atom([:pi,:proceed]),
+                    FORM.but(id: :form.atom([:pi,:proceed]),
                              title: "Створення", class: [:button,:sgreen],
                              sources: [:process_type],  postback: {:"Spawn",[]})],
 
