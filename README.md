@@ -116,11 +116,11 @@ $ open http://localhost:8051/app/login.htm
 Дидактичні матеріали
 --------------------
 
-* <a href="https://tonpa.guru/stream/2022/2022-11-17%20%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%B2%D0%B5%D0%B1-%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA%D1%96%D0%B2.htm">022-11-17 Структура веб-фреймворків</a>
-* <a href="https://n2o.dev/ua/books/vol.2/index.html">Книга N2O</a>
-* <a href="https://n2o.dev/ua/books/vol.3/index.html">Книга ERP</a>
 * <a href="https://tonpa.guru/stream/2019/2019-07-31%20N2O%20FAQ.htm">N2O FAQ</a>
 * <a href="https://tonpa.guru/stream/2016/2016-01-29%20PhoenixFramework%20vs%20N2O.htm">PhoenixFramework vs N2O</a>
+* <a href="https://n2o.dev/ua/books/vol.2/index.html">Книга N2O</a>
+* <a href="https://n2o.dev/ua/books/vol.3/index.html">Книга ERP</a>
+* <a href="https://tonpa.guru/stream/2022/2022-11-17%20%D0%A1%D1%82%D1%80%D1%83%D0%BA%D1%82%D1%83%D1%80%D0%B0%20%D0%B2%D0%B5%D0%B1-%D1%84%D1%80%D0%B5%D0%B9%D0%BC%D0%B2%D0%BE%D1%80%D0%BA%D1%96%D0%B2.htm">Структура веб-фреймворків та приклад EXO</a>
 
 Дописувачі
 ----------
