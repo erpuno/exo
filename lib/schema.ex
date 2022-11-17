@@ -3,7 +3,7 @@ defmodule EXO do
   require FORM
   require Record
 
-  @schema [ :account, :client, :card, :transaction, :act, :currency, :field, :program, :phone ]
+  @schema [ :account, :client, :card, :transaction, :currency, :field, :program, :phone ]
 
   Enum.each(@schema,
     fn t ->
