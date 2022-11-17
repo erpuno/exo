@@ -24,7 +24,6 @@ defmodule BPE.Login do
       phone = :nitro.q(:number_phone_none)
       clients = :kvs.all '/exo/clients'
       res = findPhone(phone, clients)
-      :io.format '~p', [res]
       case res do
           [x] -> case :nitro.to_binary(EXO.client(x, :type)) do
                         "admin" -> :nitro.redirect("backoffice/reports.htm")
