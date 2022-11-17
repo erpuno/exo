@@ -3,7 +3,7 @@ defmodule EXO do
   require FORM
   require Record
 
-  @schema [ :account, :client, :card, :transaction, :act, :currency, :phone, :otp, :field, :program ]
+  @schema [ :account, :client, :card, :transaction, :act, :currency, :field, :program, :phone ]
 
   Enum.each(@schema,
     fn t ->
@@ -27,6 +27,14 @@ defmodule EXO do
       )
     end
   )
+
+   def boot() do
+      try do
+        EXO.Boot.clients
+        EXO.Boot.programs
+      rescue _ -> :skip
+      end
+   end
 
    def metainfo(), do: KVS.schema( name: :exo, tables: exo())
 

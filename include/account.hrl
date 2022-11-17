@@ -3,7 +3,7 @@
 
 -record(account, {id = kvs:seq([],[]), next = [], prev = [],
         origin = [],
-        type = internet, % oil | gas | internet
+        type = internet,
         iban = [],
         program = [],
         edrpou = [],

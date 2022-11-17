@@ -8,8 +8,6 @@ defmodule EXOSCULAT do
   def start(_, _) do
       :cowboy.start_clear(:http, [{:port, :application.get_env(:n2o, :port, 8051)}],
                                        %{env: %{dispatch: :n2o_cowboy.points()}})
-      EXO.Boot.clients
-      EXO.Boot.programs
       Supervisor.start_link([], strategy: :one_for_one, name: EXO.Supervisor)
   end
 end
