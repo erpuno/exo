@@ -16,5 +16,3 @@ defmodule BPE.FORM do
    def event(_), do: :ok
 
 end
-
-
