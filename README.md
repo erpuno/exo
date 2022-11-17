@@ -65,30 +65,30 @@ $ open http://localhost:8051/app/login.htm
 
 ### Базові модулі
 
-* [application](lib/application.ex) Головний модуль Erlang/OTP додатку
-* [schema](lib/schema.ex) Схема даних, її налаштування
-* [routes](lib/routes.ex) Налаштування маршрутів HTML сторінок для веб-серверу
-* [boot](lib/boot.ex) Первинна ініціалізація тестових даних
+* [application.ex](lib/application.ex) Головний модуль Erlang/OTP додатку
+* [schema.ex](lib/schema.ex) Схема даних, її налаштування
+* [routes.ex](lib/routes.ex) Налаштування маршрутів HTML сторінок для веб-серверу
+* [boot.ex](lib/boot.ex) Первинна ініціалізація тестових даних
 
 ### Редактори форм
 
-* [phone_form](lib/forms/phone_form.ex) Форма аутентифікації
-* [process_form](lib/forms/admin/process_form.ex) Форма створення процесу
-* [process_row](lib/forms/admin/process_row.ex) Таблична форма-рядок відображення процесу
-* [hist_row](lib/forms/admin/hist_row.ex) Таблична форма-рядок відображення кроку процесу
+* [phone_form.ex](lib/forms/phone_form.ex) Форма аутентифікації
+* [process_form.ex](lib/forms/admin/process_form.ex) Форма створення процесу
+* [process_row.ex](lib/forms/admin/process_row.ex) Таблична форма-рядок відображення процесу
+* [hist_row.ex](lib/forms/admin/hist_row.ex) Таблична форма-рядок відображення кроку процесу
 
 ### Контролери сторінок
 
-* [adm_act](lib/pages/admin/adm_act.ex) Сторінка відображення історії процесу
-* [adm_bpe](lib/pages/admin/adm_bpe.ex) Сторінка переліку всіх процесів BPE
-* [adm_form](lib/pages/admin/adm_form.ex) Сторінка відображення всіх форм системи FORM
-* [adm_kvs](lib/pages/admin/adm_kvs.ex) Сторінка даних KVS
-* [adm_n2o](lib/pages/admin/adm_n2o.ex) Сторінка таблиць N2O
-* [adm_mnesia](lib/pages/admin/adm_mnesia.ex) Сторінка даних MNESIA
-* [exo_login](lib/pages/exo_login.ex) Сторінка аутентифікації
-* [exo_tariffs](lib/pages/exo_tariffs.ex) Сторінка налаштування тарифних моделей
-* [exo_domains](lib/pages/exo_domains.ex) Сторінка адміністрування користувачів системи
-* [exo_service](lib/pages/exo_service.ex) Сторінка підключення сервісів споживача
+* [adm_act.ex](lib/pages/admin/adm_act.ex) Сторінка відображення історії процесу
+* [adm_bpe.ex](lib/pages/admin/adm_bpe.ex) Сторінка переліку всіх процесів BPE
+* [adm_form.ex](lib/pages/admin/adm_form.ex) Сторінка відображення всіх форм системи FORM
+* [adm_kvs.ex](lib/pages/admin/adm_kvs.ex) Сторінка даних KVS
+* [adm_n2o.ex](lib/pages/admin/adm_n2o.ex) Сторінка таблиць N2O
+* [adm_mnesia.ex](lib/pages/admin/adm_mnesia.ex) Сторінка даних MNESIA
+* [exo_login.ex](lib/pages/exo_login.ex) Сторінка аутентифікації
+* [exo_tariffs.ex](lib/pages/exo_tariffs.ex) Сторінка налаштування тарифних моделей
+* [exo_domains.ex](lib/pages/exo_domains.ex) Сторінка адміністрування користувачів системи
+* [exo_service.ex](lib/pages/exo_service.ex) Сторінка підключення сервісів споживача
 
 Аутентифікація
 --------------
