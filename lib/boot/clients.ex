@@ -3,12 +3,12 @@ defmodule EXO.Clients do
   def clients() do
        date = :calendar.now_to_datetime :erlang.timestamp
        sample = [
-          EXO.client(id: :kvs.seq([],[]), names: "Максим", phone: "380676631870", surnames: "Сохацький", type: :admin, status: :online, date: date),
-          EXO.client(id: :kvs.seq([],[]), names: "Антон",  phone: "380676631871", surnames: "Волошко", type: :admin, status: :online, date: date),
-          EXO.client(id: :kvs.seq([],[]), names: "МВС",    phone: "380676631872", surnames: "", type: :consumer, status: :online, date: date),
-          EXO.client(id: :kvs.seq([],[]), names: "ГСЦ",    phone: "380676631873", surnames: "", type: :consumer, status: :online, date: date),
-          EXO.client(id: :kvs.seq([],[]), names: "ЦІТ",    phone: "380676631874", surnames: "", type: :consumer, status: :online, date: date),
-          EXO.client(id: :kvs.seq([],[]), names: "ДНДІ",   phone: "380676631875", surnames: "", type: :consumer, status: :online, date: date),
+          EXO.client(id: :kvs.seq([],[]), names: "Максим", phone: "1", surnames: "Сохацький", type: :admin, status: :online, date: date),
+          EXO.client(id: :kvs.seq([],[]), names: "Антон",  phone: "2", surnames: "Волошко", type: :admin, status: :online, date: date),
+          EXO.client(id: :kvs.seq([],[]), names: "МВС",    phone: "3", surnames: "", type: :consumer, status: :online, date: date),
+          EXO.client(id: :kvs.seq([],[]), names: "ГСЦ",    phone: "4", surnames: "", type: :consumer, status: :online, date: date),
+          EXO.client(id: :kvs.seq([],[]), names: "ЦІТ",    phone: "5", surnames: "", type: :consumer, status: :online, date: date),
+          EXO.client(id: :kvs.seq([],[]), names: "ДНДІ",   phone: "6", surnames: "", type: :consumer, status: :online, date: date),
        ]
        :lists.map fn x -> :kvs.append x, '/exo/clients' end, sample
    end
