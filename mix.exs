@@ -4,7 +4,7 @@ defmodule EXO.Mixfile do
   def project() do
     [
       app: :exosculat,
-      version: "0.11.2",
+      version: "0.11.3",
       description: "EXO Exosculat Application",
       package: package(),
       elixir: "~> 1.11",
@@ -31,8 +31,8 @@ defmodule EXO.Mixfile do
       {:rocksdb, "~> 1.6.0"},
       {:syn, "2.1.0"},
       {:bpe, "~> 7.11.0"},
-      {:nitro, "~> 7.10", override: true},
-      {:form, "~> 7.8.0"},
+      {:nitro, "~> 7.10.0"},
+      {:form, "~> 7.10.0"},
       {:kvs, "~> 9.4.8"},
       {:n2o, "~> 9.11.0"}
     ]
