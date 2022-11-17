@@ -65,7 +65,7 @@ $ open http://localhost:8051/app/login.htm
 
 * [application](lib/application.ex) Головний модуль Erlang/OTP додатку
 * [schema](lib/schema.ex) хема даних, її налаштування
-* [routes](lib/pages/routes.ex) Налаштування маршрутів HTML сторінок для веб-серверу
+* [routes](lib/routes.ex) Налаштування маршрутів HTML сторінок для веб-серверу
 
 ### Редактори форм
 
