@@ -81,7 +81,7 @@ $ open http://localhost:8051/app/login.htm
 
 * [adm_act](lib/pages/adm_act.ex) Сторінка відображення історії процесу
 * [adm_bpe](lib/pages/adm_bpe.ex) Сторінка переліку всіх процесів BPE
-* [adm_forms](lib/pages/adm_form.ex) Сторінка відображення всіх форм системи FORM
+* [adm_form](lib/pages/adm_form.ex) Сторінка відображення всіх форм системи FORM
 * [adm_kvs](lib/pages/adm_kvs.ex) Сторінка даних KVS
 * [adm_n2o](lib/pages/adm_n2o.ex) Сторінка таблиць N2O
 * [adm_mnesia](lib/pages/adm_mnesia.ex) Сторінка даних MNESIA
