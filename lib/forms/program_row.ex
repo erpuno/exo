@@ -12,8 +12,7 @@ defmodule Program.Row do
       formula = EXO.program(program, :formula)
 
       NITRO.panel(id: :form.atom([:tr,name]), class: :td, body: [
-        NITRO.panel(class: :column20,  body:
-           NITRO.link(href: "user.htm?p=" <> :nitro.to_binary(name), body: name)),
+        NITRO.panel(class: :column20,  body: name),
         NITRO.panel(class: :column20,  body: :nitro.to_binary type),
         NITRO.panel(class: :column20,  body: :nitro.compact date),
         NITRO.panel(class: :column20,  body: :nitro.compact formula),

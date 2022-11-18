@@ -112,7 +112,7 @@ input[type="radio"], input[type="checkbox"] { width: auto; }
 .detailsTable > div:last-child { border-bottom: 1px solid #333; }
 .table { display: table; width: 100%; }
 .table > div.trGroup {display: table-row-group; background-color: #fff;}
-.th, .td { display: table-row; text-align: center; font-size: 1.2em; }
+.th, .td { display: table-row; text-align: top; font-size: 1.2em; }
 .th { background-color: #7779e0; color: #f0f0f0; font-weight: bold; }
 .td { background-color: inherit; color: #333; }
 .table .column14, .table .column12, .table .column10, .table .column20, .table .column6, .table .column3  {
