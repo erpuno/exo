@@ -4,20 +4,20 @@ defmodule EXO.Service do
    require NITRO
 
    def showTariffs(type) do
-      :lists.map(fn x ->
+       :nitro.clear(:tariffs)
+       :nitro.insert_bottom(:tariffs, EXO.Tariffs.header())
+       :lists.map(fn x ->
         case :nitro.to_binary(EXO.program(x, :type)) do
            t when t == type ->
-               :nitro.insert_top(:tariffsRow,
+               :nitro.insert_bottom(:tariffs,
                    Program.Row.new(:form.atom([:row, EXO.program(x, :id)]), x, []))
            _ -> :skip
       end end, :kvs.all('/exo/tariffs'))
    end
 
    def event(:init) do
-       :nitro.clear(:serviceTypesHead)
-       :nitro.clear(:serviceTypesRow)
-       :nitro.insert_top(:serviceTypesHead, serviceHeader())
-       :nitro.insert_top(:tariffsHead, header())
+       :nitro.clear(:serviceTypes)
+       :nitro.insert_top(:tariffs, EXO.Tariffs.header())
        :nitro.clear(:frms)
        :nitro.clear(:ctrl)
        mod = Account.Form
@@ -28,25 +28,24 @@ defmodule EXO.Service do
                      postback: :create, class: [:button, :sgreen]))
        :nitro.hide(:frms)
 
-      :nitro.insert_top(:serviceTypesHeader, serviceHeader())
-      :nitro.insert_top(:serviceTypesRow,
-         NITRO.panel(class: :td,
-                     body: NITRO.link(postback: {:showTariffs, "gas"}, body: "Газ")))
-      :nitro.insert_top(:serviceTypesRow,
-         NITRO.panel(class: :td,
-                     body: NITRO.link(postback: {:showTariffs, "oil"}, body: "Нафта")))
-      :nitro.insert_top(:serviceTypesRow,
-         NITRO.panel(class: :td,
-                     body: NITRO.link(postback: {:showTariffs, "electricity"}, body: "Електрика")))
-      :nitro.insert_top(:serviceTypesRow,
-         NITRO.panel(class: :td,
-                     body: NITRO.link(postback: {:showTariffs, "internet"}, body: "Інтернет")))
+      :nitro.insert_bottom(:serviceTypes, serviceHeader())
+      :nitro.insert_bottom(:serviceTypes,
+         NITRO.panel(class: :td, style: "height: 25px;", 
+                     body: NITRO.link(id: "gas", postback: {:showTariffs, "gas"}, body: "Газ") ))
+      :nitro.insert_bottom(:serviceTypes,
+         NITRO.panel(class: :td, style: "height: 25px;", 
+                     body: NITRO.link(id: "iol", postback: {:showTariffs, "oil"}, body: "Нафта") ))
+      :nitro.insert_bottom(:serviceTypes,
+         NITRO.panel(class: :td, style: "height: 25px;", 
+                     body: NITRO.link(id: "electricity", postback: {:showTariffs, "electricity"}, body: "Електрика") ))
+      :nitro.insert_bottom(:serviceTypes,
+         NITRO.panel(class: :td, style: "height: 25px;", 
+                     body: NITRO.link(id: "internet", postback: {:showTariffs, "internet"}, body: "Інтернет") ))
 
       showTariffs("internet")
    end
 
    def event({:showTariffs,e}) do
-       :nitro.clear(:tariffsRow)
        showTariffs(e)
    end
 
@@ -78,19 +77,8 @@ defmodule EXO.Service do
     def serviceHeader() do
         NITRO.panel(id: :serviceTypeHeader,
                     class: :th,
-                    body: [
-                            NITRO.panel(class: :column100, body: "Тип"),
+                    body: [ NITRO.panel(class: :column20, body: "Тип"),
                           ] )
    end
 
-    def header() do
-        NITRO.panel(id: :tariffsHeader,
-                    class: :th,
-                    body: [
-                            NITRO.panel(class: :column20, body: "Імя"),
-                            NITRO.panel(class: :column20, body: "Тип"),
-                            NITRO.panel(class: :column20, body: "Формула"),
-                            NITRO.panel(class: :column20, body: "Дата"),
-                          ] )
-   end
 end

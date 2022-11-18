@@ -26,8 +26,8 @@ defmodule EXO.Login do
       res = findByPhone(phone, clients)
       case res do
           [x] -> case :nitro.to_binary(EXO.client(x, :type)) do
-                        "admin" -> :nitro.redirect("backoffice/reports.htm")
-                        "consumer" -> :nitro.redirect("consumer/profile.htm")
+                        "admin" -> :nitro.redirect("backoffice/domains.htm")
+                        "consumer" -> :nitro.redirect("consumer/service.htm")
                  end
           _ -> :nitro.redirect("index.html")
       end

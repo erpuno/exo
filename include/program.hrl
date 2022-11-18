@@ -5,7 +5,7 @@
         name = [],
         type = telecom,
         formula = [],
-        date = [],
+        date = {{2022,11,19},{1,1,1}},
         etc = []
        }).
 
