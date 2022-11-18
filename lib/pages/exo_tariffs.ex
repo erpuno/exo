@@ -50,9 +50,9 @@ defmodule EXO.Tarrifs do
                     class: :th,
                     body: [
                             NITRO.panel(class: :column20, body: "Імя"),
-                            NITRO.panel(class: :column20, body: "Тип"),
-                            NITRO.panel(class: :column20, body: "Формула"),
-                            NITRO.panel(class: :column20, body: "Дата"),
+                            NITRO.panel(class: :column10, body: "Тип"),
+                            NITRO.panel(class: :column10, body: "Формула"),
+                            NITRO.panel(class: :column33, body: "Дата"),
                           ] )
    end
 end
